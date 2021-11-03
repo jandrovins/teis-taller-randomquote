@@ -28,7 +28,8 @@ class Controller extends BaseController
         $data = [];
         $data['url'] = "https://storage.googleapis.com/taller2imagenes/Imagenes/{$num}.jpg";
         $data['host'] = gethostbyname(gethostname());
-        return view('random_images')->with('data', $data);
+        #return view('random_images')->with('data', $data);
+        return response('echo "<img src=\"' . $data['url'] . '\">"' )
     }
 }
 
