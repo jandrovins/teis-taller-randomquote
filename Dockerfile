@@ -9,7 +9,7 @@ RUN composer install \
     --no-plugins \
     --no-scripts \
     --prefer-dist
-RUN mkdir storage
+RUN mkdir -p storage
 RUN chmod -R 777 storage
 RUN touch test-nov03
 RUN a2enmod rewrite
