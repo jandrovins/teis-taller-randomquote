@@ -22,5 +22,15 @@ class Controller extends BaseController
         return response()->json(['quote' => $randomQuote]);
     }
 
+    public function random_images()
+    {
+        $num = random_int(1, 15);
+        $num = $num < 10 ? "0" . $num : $num;
+        $data = [];
+        $data['url'] = "https://storage.googleapis.com/taller2imagenes/Imagenes/{$num}.jpg";
+        $data['host'] = gethostbyname(gethostname());
+        return view('random_images')->with('data', $data);
+    }
+
 }
 
