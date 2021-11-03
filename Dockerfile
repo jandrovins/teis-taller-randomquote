@@ -11,6 +11,7 @@ RUN composer install \
     --prefer-dist
 RUN mkdir storage
 RUN chmod -R 777 storage
+RUN touch test-nov03
 RUN a2enmod rewrite
 RUN service apache2 restart
 
