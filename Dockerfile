@@ -9,7 +9,7 @@ RUN composer install \
     --no-plugins \
     --no-scripts \
     --prefer-dist
-
+RUN php artisan storage:link
 RUN a2enmod rewrite
 RUN service apache2 restart
 
